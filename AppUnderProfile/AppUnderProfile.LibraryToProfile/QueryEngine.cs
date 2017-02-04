@@ -1,5 +1,6 @@
 ﻿using StackExchange.Profiling;
 using System;
+using System.IO;
 using System.Threading;
 
 namespace AppUnderProfile.LibraryToProfile
@@ -10,34 +11,27 @@ namespace AppUnderProfile.LibraryToProfile
     public class QueryEngine
     {
         private static readonly Random _random = new Random();
-        private readonly MiniProfilerLogExporter.MiniProfilerLogExporter _miniProfilerLogExporter;
+        private readonly MiniProfiler _miniProfiler;
 
-        public QueryEngine(MiniProfilerLogExporter.MiniProfilerLogExporter miniProfilerLogExporter)
+        public QueryEngine(MiniProfiler miniProfiler)
         {
-            _miniProfilerLogExporter = miniProfilerLogExporter;
+            _miniProfiler = miniProfiler;
         }
 
         public void Query()
         {
-            MiniProfiler.Settings.ProfilerProvider = new SingletonProfilerProvider();
-
-            var mp = MiniProfiler.Start();
-
-            using (mp.Step("Step 1"))
+            using (_miniProfiler.Step("Step 1"))
             {
                 Step1();
             }
-            using (mp.Step("Step 2"))
+            using (_miniProfiler.Step("Step 2"))
             {
                 Step2();
             }
-            using (mp.Step("Step 3"))
+            using (_miniProfiler.Step("Step 3"))
             {
                 Step3();
             }
-
-            MiniProfiler.Stop();
-            _miniProfilerLogExporter.WriteToLogger(mp);
         }
 
         private void SleepForRandomDuration()
