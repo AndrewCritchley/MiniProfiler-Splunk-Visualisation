@@ -45,7 +45,8 @@ namespace AppUnderProfile.Console
         static void WriteToJsonFile(MiniProfiler miniProfiler)
         {
             var guid = Guid.NewGuid();
-            File.WriteAllText($"Results\\Json\\{guid}.json", MiniProfiler.ToJson(miniProfiler));
+            var prettyJson = JsonFormatterPlus.JsonFormatter.Format(MiniProfiler.ToJson(miniProfiler));
+            File.WriteAllText($"Results\\Json\\{guid}.json", prettyJson);
         }
 
         static void WriteToSerilog(MiniProfiler miniProfiler)

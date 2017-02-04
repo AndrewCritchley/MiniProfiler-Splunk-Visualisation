@@ -1,0 +1,44 @@
+{
+    "Id": "515a40e5-96de-4cdf-b76b-a8083382086b",
+    "Name": null,
+    "Started": "\/Date(1486214174405)\/",
+    "DurationMilliseconds": 10624.8,
+    "MachineName": "DESKTOP-B77F50E",
+    "CustomLinks": null,
+    "Root": {
+        "Id": "36b8c298-436a-4a7e-b0e8-9fcb0c3580ed",
+        "Name": "AppUnderProfile.Console.vshost.exe",
+        "DurationMilliseconds": 10624.1,
+        "StartMilliseconds": 0.6,
+        "Children": [
+            {
+                "Id": "6e1b6408-e3cf-4781-9dbe-4cfe4d4a3e7b",
+                "Name": "Step 1",
+                "DurationMilliseconds": 843.6,
+                "StartMilliseconds": 3.3,
+                "Children": null,
+                "CustomTimings": null
+            },
+            {
+                "Id": "a03d4586-9d76-4d3c-9cd5-8be5f1b739b6",
+                "Name": "Step 2",
+                "DurationMilliseconds": 5356.4,
+                "StartMilliseconds": 847,
+                "Children": null,
+                "CustomTimings": null
+            },
+            {
+                "Id": "859a7b4b-5377-4d35-b62d-9c256ce1382f",
+                "Name": "Step 3",
+                "DurationMilliseconds": 4420.3,
+                "StartMilliseconds": 6203.4,
+                "Children": null,
+                "CustomTimings": null
+            }
+        ],
+        "CustomTimings": null
+    },
+    "ClientTimings": null,
+    "User": null,
+    "Storage": null
+}
